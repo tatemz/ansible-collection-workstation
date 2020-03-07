@@ -1,0 +1,15 @@
+- name: Debian | Add Brave Browser apt key
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+    state: present
+
+- name: Debian | Add Brave Browser apt repository
+  apt_repository: 
+    repo: 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main' 
+    state: present 
+    filename: brave-browser
+
+- name: Debian | Install Brave Browser
+  apt:
+    name: brave-browser
+  state: present

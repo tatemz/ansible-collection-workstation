@@ -1,0 +1,12 @@
+- name: Assert OS Family
+  assert:
+    that:
+      - "ansible_os_family in ('Debian', 'Zorin OS', 'Windows')"
+
+- name: Install Brave Browser (Debian)
+  include_tasks: setup-Debian.yml
+  when: ansible_os_family == "Debian" or ansible_os_family == "Zorin OS"
+
+- name: Install Brave Browser (Windows)
+  include_tasks: setup-Windows.yml
+  when: ansible_os_family == "Windows"

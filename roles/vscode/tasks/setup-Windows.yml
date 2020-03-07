@@ -1,0 +1,4 @@
+- name: Windows | Install VS Code
+  win_chocolatey:
+    name: vscode
+    state: present

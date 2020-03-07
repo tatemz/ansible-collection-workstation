@@ -1,0 +1,10 @@
+---
+# This playbook configures personal workstations for tatemz
+
+- name: Configure Linux
+  hosts: localhost
+  become: yes
+  collections:
+   - tatemz.workstation
+  roles:
+    - brave-browser

@@ -1,0 +1,4 @@
+- name: Windows | Install Brave Browser
+  win_chocolatey:
+    name: brave
+    state: present
